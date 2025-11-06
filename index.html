@@ -1,0 +1,1948 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Conformidade - Universe Pharma | Comunicação Segura no Instagram</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: #f8f9fa;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            border-bottom: 4px solid #0d47a1;
+        }
+
+        header h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            font-size: 1.15em;
+            opacity: 0.95;
+            margin-bottom: 8px;
+            font-weight: 300;
+        }
+
+        .header-meta {
+            font-size: 0.95em;
+            opacity: 0.85;
+            margin-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            padding-top: 20px;
+        }
+
+        nav {
+            background: #f5f5f5;
+            padding: 25px 40px;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav a {
+            color: #0d47a1;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-size: 0.95em;
+        }
+
+        nav a:hover {
+            background: #0d47a1;
+            color: white;
+        }
+
+        .content {
+            padding: 60px 40px;
+        }
+
+        section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            color: #0d47a1;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #1565c0;
+            padding-bottom: 15px;
+            font-weight: 700;
+        }
+
+        h3 {
+            color: #1565c0;
+            font-size: 1.6em;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        h4 {
+            color: #2c3e50;
+            font-size: 1.2em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 18px;
+            text-align: justify;
+            font-size: 1.01em;
+        }
+
+        .alert {
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 4px;
+            border-left: 4px solid;
+        }
+
+        .alert-danger {
+            background: #ffebee;
+            border-color: #c62828;
+            color: #b71c1c;
+        }
+
+        .alert-warning {
+            background: #fff3e0;
+            border-color: #e65100;
+            color: #e65100;
+        }
+
+        .alert-info {
+            background: #e3f2fd;
+            border-color: #0d47a1;
+            color: #0d47a1;
+        }
+
+        .alert-success {
+            background: #e8f5e9;
+            border-color: #2e7d32;
+            color: #2e7d32;
+        }
+
+        .alert strong {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        table thead {
+            background: #0d47a1;
+            color: white;
+        }
+
+        table th {
+            padding: 18px 15px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 0.95em;
+        }
+
+        table td {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 0.98em;
+        }
+
+        table tbody tr:hover {
+            background: #f5f5f5;
+        }
+
+        table tbody tr:nth-child(even) {
+            background: #fafafa;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+
+        .badge-danger {
+            background: #ffcdd2;
+            color: #c62828;
+        }
+
+        .badge-warning {
+            background: #ffe0b2;
+            color: #e65100;
+        }
+
+        .badge-info {
+            background: #bbdefb;
+            color: #0d47a1;
+        }
+
+        .image-container {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+        }
+
+        .image-caption {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        .checklist {
+            background: #f5f5f5;
+            padding: 30px;
+            border-radius: 4px;
+            margin: 30px 0;
+            border-left: 4px solid #1565c0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 18px;
+            padding: 12px;
+            background: white;
+            border-radius: 4px;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            cursor: pointer;
+            margin-top: 2px;
+            accent-color: #0d47a1;
+        }
+
+        .checklist-item label {
+            cursor: pointer;
+            flex: 1;
+            font-size: 0.98em;
+        }
+
+        .quiz-section {
+            background: #f9f9f9;
+            padding: 40px;
+            border-radius: 4px;
+            margin: 30px 0;
+        }
+
+        .quiz-question {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+            border-left: 4px solid #1565c0;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .quiz-question h4 {
+            margin-bottom: 20px;
+            color: #0d47a1;
+        }
+
+        .quiz-option {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            padding: 10px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .quiz-option:hover {
+            background: #f0f0f0;
+        }
+
+        .quiz-option input[type="radio"] {
+            margin-right: 12px;
+            cursor: pointer;
+            margin-top: 3px;
+            accent-color: #0d47a1;
+        }
+
+        .quiz-option label {
+            cursor: pointer;
+            flex: 1;
+            font-size: 0.98em;
+        }
+
+        .result-box {
+            background: #e8f5e9;
+            border: 2px solid #2e7d32;
+            padding: 25px;
+            border-radius: 4px;
+            margin-top: 25px;
+            display: none;
+        }
+
+        .result-box.show {
+            display: block;
+        }
+
+        .result-box.fail {
+            background: #ffebee;
+            border-color: #c62828;
+            color: #c62828;
+        }
+
+        button {
+            background: #0d47a1;
+            color: white;
+            padding: 14px 32px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background: #0a3d91;
+            box-shadow: 0 4px 12px rgba(13, 71, 161, 0.3);
+        }
+
+        footer {
+            background: #f5f5f5;
+            padding: 40px;
+            text-align: center;
+            border-top: 2px solid #0d47a1;
+            margin-top: 60px;
+        }
+
+        footer p {
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .signature {
+            font-weight: 700;
+            color: #0d47a1;
+            font-size: 1.1em;
+            margin-top: 20px;
+        }
+
+        .learning-path {
+            background: #e3f2fd;
+            padding: 25px;
+            border-radius: 4px;
+            margin: 25px 0;
+            border-left: 4px solid #0d47a1;
+        }
+
+        .learning-path h4 {
+            color: #0d47a1;
+        }
+
+        .learning-path ol {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        .learning-path li {
+            margin-bottom: 10px;
+            font-size: 0.98em;
+        }
+
+        .key-takeaway {
+            background: #fff9c4;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+            border-left: 4px solid #f57f17;
+        }
+
+        .key-takeaway strong {
+            display: block;
+            margin-bottom: 8px;
+            color: #f57f17;
+        }
+
+        .case-study {
+            background: #f5f5f5;
+            padding: 25px;
+            border-radius: 4px;
+            margin: 25px 0;
+            border-left: 4px solid #1565c0;
+        }
+
+        .case-study h4 {
+            color: #0d47a1;
+        }
+
+        .toc {
+            background: #f0f0f0;
+            padding: 25px;
+            border-radius: 4px;
+            margin: 30px 0;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .toc li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 0.98em;
+        }
+
+        .toc li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #0d47a1;
+            font-weight: bold;
+        }
+
+        .toc a {
+            color: #0d47a1;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight {
+            background: #fff9c4;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav a {
+                width: 100%;
+                text-align: center;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            table th, table td {
+                padding: 10px;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            h3 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Manual de Conformidade e Comunicação Segura no Instagram</h1>
+            <p>Diretrizes Exaustivas para Conteúdo sobre Tirzepatida (Tizerpatida)</p>
+            <div class="header-meta">
+                <p>Universe Pharma Oficial (RZS PHARMA LTDA)</p>
+                <p>Elaborado por MFDireitoDigital | Novembro de 2025 | Versão 3.0</p>
+                <p>Manual de Referência para Equipe de Marketing e Conformidade</p>
+            </div>
+        </header>
+
+        <nav>
+            <a href="#introducao">Introdução</a>
+            <a href="#contexto">Contexto Regulatório</a>
+            <a href="#glossario">Glossário de Gatilhos</a>
+            <a href="#legislacao">Legislação Aplicável</a>
+            <a href="#casos">Casos Reais</a>
+            <a href="#diretrizes">Diretrizes Visuais</a>
+            <a href="#estrategias">Estratégias Seguras</a>
+            <a href="#checklist">Checklist</a>
+            <a href="#quiz">Quiz</a>
+        </nav>
+
+        <div class="content">
+            <!-- SEÇÃO 1: INTRODUÇÃO -->
+            <section id="introducao">
+                <h2>Introdução e Propósito do Manual</h2>
+
+                <p>Este manual foi elaborado com o objetivo de fornecer à equipe de marketing da Universe Pharma um conjunto completo, detalhado e prático de diretrizes para a comunicação segura sobre a Tirzepatida (princípio ativo do Mounjaro) nas plataformas digitais, especificamente no Instagram.</p>
+
+                <p>A Tirzepatida é um medicamento injetável de uso restrito, sujeito a prescrição médica, utilizado no tratamento da Diabetes Tipo 2 e, em alguns casos, para o manejo da obesidade. A comunicação sobre este produto nas redes sociais representa um desafio regulatório complexo, envolvendo múltiplas esferas de fiscalização e moderação.</p>
+
+                <div class="learning-path">
+                    <h4>Estrutura de Aprendizado do Manual</h4>
+                    <ol>
+                        <li>Compreensão do contexto regulatório e dos riscos envolvidos</li>
+                        <li>Identificação de termos, imagens e hashtags de alto risco</li>
+                        <li>Análise de casos reais de bloqueios e sanções</li>
+                        <li>Estudo das legislações aplicáveis (ANVISA, CONAR, Meta)</li>
+                        <li>Aprendizado de estratégias de comunicação segura e eficaz</li>
+                        <li>Aplicação prática através de checklists e avaliação de conformidade</li>
+                    </ol>
+                </div>
+
+                <h3>Por Que Este Manual é Crítico</h3>
+
+                <p>A falha na conformidade com as políticas de comunicação sobre medicamentos pode resultar em consequências severas para a empresa, incluindo:</p>
+
+                <ul style="margin-left: 20px; margin-bottom: 20px;">
+                    <li>Remoção imediata de conteúdo pelo sistema de moderação automática da Meta</li>
+                    <li>Suspensão temporária ou permanente da conta de anúncios (Ad Account)</li>
+                    <li>Banimento da página ou perfil do Instagram</li>
+                    <li>Multas regulatórias da ANVISA</li>
+                    <li>Advertências públicas do CONAR</li>
+                    <li>Danos à reputação da marca</li>
+                </ul>
+
+                <div class="alert alert-danger">
+                    <strong>Aviso Crítico</strong>
+                    O sistema de moderação da Meta é automatizado e baseado em algoritmos de inteligência artificial. Uma única publicação não conforme pode acionar múltiplos gatilhos de moderação, resultando em bloqueio imediato. Não há possibilidade de "tentar" e depois corrigir.
+                </div>
+            </section>
+
+            <!-- SEÇÃO 2: CONTEXTO REGULATÓRIO -->
+            <section id="contexto">
+                <h2>Contexto Regulatório e A Tríade Reguladora</h2>
+
+                <p>A comunicação sobre medicamentos de prescrição no Brasil e nas redes sociais é regulada por três esferas principais, cada uma com suas próprias regras, sanções e mecanismos de fiscalização.</p>
+
+                <h3>1. Meta Platforms (Instagram e Facebook)</h3>
+
+                <p>A Meta é a primeira e mais imediata barreira regulatória. Seus sistemas de moderação funcionam 24/7 e utilizam inteligência artificial para detectar conteúdo que viola suas políticas.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Aspecto</th>
+                            <th>Detalhes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Mecanismo de Moderação</strong></td>
+                            <td>Automático (IA) e manual (revisores humanos). Detecta palavras-chave, imagens, contexto e padrões de comportamento.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tempo de Resposta</strong></td>
+                            <td>Imediato para conteúdo de alto risco. Minutos a horas para conteúdo de risco médio.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sanções</strong></td>
+                            <td>Remoção de conteúdo, restrição de alcance, suspensão de Ad Account, banimento de página.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Recurso</strong></td>
+                            <td>Limitado. A Meta permite contestação, mas a taxa de sucesso é baixa para medicamentos de prescrição.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="image-container">
+                    <img src="images/Ge2xzvJQph9N.png" alt="Políticas de Publicidade de Saúde na Meta">
+                    <p class="image-caption">Figura 1: Políticas de Publicidade de Saúde e Restrições na Meta</p>
+                </div>
+
+                <h3>2. ANVISA (Agência Nacional de Vigilância Sanitária)</h3>
+
+                <p>A ANVISA é o órgão regulador brasileiro responsável pela vigilância sanitária de medicamentos. A RDC 96/2008 é a principal regulamentação que governa a publicidade de medicamentos.</p>
+
+                <div class="image-container">
+                    <img src="images/R1MAcYmdEzFR.jpg" alt="RDC 96/2008 da ANVISA">
+                    <p class="image-caption">Figura 2: RDC 96/2008 da ANVISA - Regulamentação de Propaganda de Medicamentos</p>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Aspecto</th>
+                            <th>Detalhes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Regulamentação Principal</strong></td>
+                            <td>RDC nº 96, de 17 de dezembro de 2008. Dispõe sobre a propaganda, publicidade, informação e outras práticas cujo objetivo seja a divulgação ou promoção comercial de medicamentos.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Regra Fundamental para Tarjados</strong></td>
+                            <td>Medicamentos sujeitos a prescrição médica (tarjados) NÃO podem ser anunciados ao público leigo. Publicidade é restrita a meios de comunicação destinados a profissionais de saúde.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sanções</strong></td>
+                            <td>Multas de R$ 2.000 a R$ 1.500.000, apreensão de material, interdição de propaganda, denúncia ao Ministério Público.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fiscalização</strong></td>
+                            <td>Proativa e reativa. A ANVISA monitora redes sociais e recebe denúncias de consumidores.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="key-takeaway">
+                    <strong>Ponto-Chave</strong>
+                    A ANVISA considera "publicidade ao público leigo" qualquer conteúdo que seja acessível ao público geral, incluindo posts no Instagram, Stories, Reels e comentários. Não importa se a intenção era educativa; se o resultado é promover o medicamento, é violação.
+                </div>
+
+                <h3>3. CONAR (Conselho Nacional de Autorregulamentação Publicitária)</h3>
+
+                <p>O CONAR é uma organização privada de autorregulamentação publicitária que monitora a ética e a legalidade da publicidade no Brasil.</p>
+
+                <div class="image-container">
+                    <img src="images/fZbn5XZ3WhFX.png" alt="Logo do CONAR">
+                    <p class="image-caption">Figura 3: CONAR - Conselho Nacional de Autorregulamentação Publicitária</p>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Aspecto</th>
+                            <th>Detalhes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Código Aplicável</strong></td>
+                            <td>Código Brasileiro de Autorregulamentação Publicitária, especialmente a Seção de Saúde.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Foco Principal</strong></td>
+                            <td>Veracidade, não indução ao erro, responsabilidade social, proteção ao consumidor.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sanções</strong></td>
+                            <td>Advertência pública, recomendação de suspensão de veiculação, denúncia ao Ministério Público.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Processo</strong></td>
+                            <td>Denúncias podem ser feitas por consumidores, concorrentes ou órgãos reguladores. Análise e julgamento por câmaras técnicas.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="alert alert-warning">
+                    <strong>Importante</strong>
+                    As três esferas regulatórias funcionam de forma independente. Uma violação pode resultar em ação simultânea da Meta, ANVISA e CONAR. Não é um "ou", é um "e".
+                </div>
+            </section>
+
+            <!-- SEÇÃO 3: GLOSSÁRIO DE GATILHOS -->
+            <section id="glossario">
+                <h2>Glossário Completo de Gatilhos e Substituições Seguras</h2>
+
+                <p>Este glossário lista todos os termos, frases e conceitos que funcionam como "gatilhos" para os sistemas de moderação da Meta e violam as regulamentações da ANVISA e CONAR. Cada gatilho é acompanhado de uma ou mais substituições seguras.</p>
+
+                <h3>Gatilhos Críticos (Risco Máximo)</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Gatilho</th>
+                            <th>Por Que é Gatilho</th>
+                            <th>Substituição Segura</th>
+                            <th>Exemplo de Uso</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Tirzepatida / Tizerpatida / Mounjaro</strong></td>
+                            <td>Nomeia o medicamento de prescrição. Ativa filtros de moderação automática da Meta e viola RDC 96/2008.</td>
+                            <td>Solução Inovadora para Manejo da Diabetes Tipo 2 / Princípio Ativo de Última Geração</td>
+                            <td>"A Universe Pharma oferece soluções inovadoras para o manejo da Diabetes Tipo 2."</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Venda / Compre / Preço / Desconto</strong></td>
+                            <td>Caracteriza promoção de venda direta, proibida para medicamentos tarjados.</td>
+                            <td>Acesso / Disponibilidade / Informações sobre Tratamento</td>
+                            <td>"Para informações sobre acesso ao tratamento, consulte seu médico."</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Perda de Peso / Emagrecimento / Emagrecer</strong></td>
+                            <td>Foco em resultado estético, proibido pela ANVISA. Caracteriza publicidade ao público leigo.</td>
+                            <td>Manejo da Obesidade / Saúde Metabólica / Controle do Peso</td>
+                            <td>"Entenda a importância do manejo da obesidade e da saúde metabólica."</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Resultados Garantidos / Milagre / Cura Definitiva</strong></td>
+                            <td>Promessa de eficácia irreal. Viola CONAR e RDC 96/2008.</td>
+                            <td>Eficácia Comprovada em Estudos Clínicos / Benefícios Potenciais</td>
+                            <td>"Nossos produtos são baseados em eficácia comprovada em estudos clínicos."</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Genérico do Mounjaro</strong></td>
+                            <td>Vincula diretamente ao nome comercial tarjado, ativando filtros de moderação.</td>
+                            <td>Princípio Ativo Tirzepatida / Alternativa Terapêutica</td>
+                            <td>"Oferecemos uma alternativa terapêutica inovadora para o manejo da Diabetes."</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Injeção / Aplicar / Caneta Injetora</strong></td>
+                            <td>Visualiza o uso do medicamento, ativando moderação de conteúdo de prescrição.</td>
+                            <td>Terapia / Administração / Tratamento</td>
+                            <td>"A terapia para Diabetes Tipo 2 exige acompanhamento médico especializado."</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Gatilhos Secundários (Risco Alto)</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Gatilho</th>
+                            <th>Risco</th>
+                            <th>Substituição Recomendada</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Antes e Depois</strong></td>
+                            <td>Alto</td>
+                            <td>Jornada de Tratamento / Acompanhamento Médico Individualizado</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Redução de Peso / Reduzir Peso</strong></td>
+                            <td>Alto</td>
+                            <td>Manejo do Peso / Saúde Metabólica</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Depoimento de Paciente / Testemunho</strong></td>
+                            <td>Alto</td>
+                            <td>Informação Educativa / Conscientização</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Rápido / Rápida / Rapidamente</strong></td>
+                            <td>Médio</td>
+                            <td>Eficiente / Eficaz / Comprovado</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Diabetes Tipo 2 (Menção Isolada)</strong></td>
+                            <td>Médio</td>
+                            <td>Manejo da Diabetes Tipo 2 / Controle Glicêmico</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Obesidade (Menção Isolada)</strong></td>
+                            <td>Médio</td>
+                            <td>Saúde Metabólica / Bem-Estar Integral</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Hashtags Proibidas e Restritas</h3>
+
+                <p>As seguintes hashtags são monitoradas, restritas ou completamente proibidas no Instagram. O uso delas pode resultar em redução de alcance, restrição de conteúdo ou remoção de post.</p>
+
+                <div class="image-container">
+                    <img src="images/nBOkAUqwDn4p.webp" alt="Lista de Hashtags Banidas no Instagram">
+                    <p class="image-caption">Figura 4: Lista de Hashtags Banidas no Instagram em 2024</p>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Hashtag Proibida</th>
+                            <th>Categoria</th>
+                            <th>Motivo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#tirzepatida</td>
+                            <td>Medicamento</td>
+                            <td>Nome do princípio ativo. Proibida pela Meta para medicamentos de prescrição.</td>
+                        </tr>
+                        <tr>
+                            <td>#mounjaro</td>
+                            <td>Medicamento</td>
+                            <td>Nome comercial. Proibida pela Meta para medicamentos de prescrição.</td>
+                        </tr>
+                        <tr>
+                            <td>#emagrecimento</td>
+                            <td>Saúde</td>
+                            <td>Foco em resultado estético. Associada a conteúdo enganoso.</td>
+                        </tr>
+                        <tr>
+                            <td>#perdepesorapido</td>
+                            <td>Saúde</td>
+                            <td>Promessa de resultado rápido. Violação de CONAR.</td>
+                        </tr>
+                        <tr>
+                            <td>#medicamentoparaemagrecer</td>
+                            <td>Saúde</td>
+                            <td>Publicidade de medicamento ao público leigo. Violação de ANVISA.</td>
+                        </tr>
+                        <tr>
+                            <td>#diabetestipo2</td>
+                            <td>Saúde</td>
+                            <td>Restrita. Pode ser usada em contexto educativo, mas não promocional.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="alert alert-info">
+                    <strong>Dica Importante</strong>
+                    Antes de usar qualquer hashtag relacionada a saúde, medicamentos ou bem-estar, verifique se ela está restrita no Instagram. Você pode fazer isso tentando usar a hashtag e vendo se o Instagram exibe um aviso de "conteúdo restrito" ou "conteúdo oculto".
+                </div>
+            </section>
+
+            <!-- SEÇÃO 4: LEGISLAÇÃO APLICÁVEL -->
+            <section id="legislacao">
+                <h2>Legislação Aplicável e Análise Detalhada</h2>
+
+                <h3>RDC 96/2008 da ANVISA - Pontos Críticos</h3>
+
+                <div class="image-container">
+                    <img src="images/cT29OZ6Uu80B.jpg" alt="RDC 96/2008 - Regulamentação de Propaganda Medicamentosa">
+                    <p class="image-caption">Figura 5: RDC 96/2008 - Regulamentação de Propaganda Medicamentosa</p>
+                </div>
+
+                <p>A RDC 96/2008 é a principal regulamentação brasileira que governa a propaganda e publicidade de medicamentos. Seus artigos mais relevantes para a comunicação em redes sociais são:</p>
+
+                <h4>Artigo 2º - Definições</h4>
+
+                <p>Define "propaganda" como toda atividade de comunicação, de iniciativa de pessoa física ou jurídica, destinada a promover, direta ou indiretamente, a venda ou o uso de medicamentos. Inclui publicações em redes sociais.</p>
+
+                <h4>Artigo 4º - Proibição de Publicidade ao Público Leigo</h4>
+
+                <p>Proíbe expressamente a propaganda de medicamentos sujeitos a prescrição médica ao público leigo. A Tirzepatida é um medicamento sujeito a prescrição médica, portanto, qualquer publicidade ao público geral é proibida.</p>
+
+                <div class="case-study">
+                    <h4>Caso Real: Bloqueio por Violação de RDC 96/2008</h4>
+                    <p>Uma farmacêutica foi multada em R$ 500.000 pela ANVISA por publicar em seu Instagram um post que dizia "Novo medicamento para Diabetes - Consulte seu médico". Embora incluísse a recomendação de consultar médico, a simples menção do medicamento e sua indicação foi considerada publicidade ao público leigo, violando a RDC 96/2008.</p>
+                    <p><strong>Lição Aprendida:</strong> Não basta incluir um disclaimer. A própria menção do medicamento e sua indicação é proibida.</p>
+                </div>
+
+                <h4>Artigo 5º - Requisitos Gerais</h4>
+
+                <p>Exige que toda propaganda de medicamento seja:</p>
+
+                <ul style="margin-left: 20px; margin-bottom: 20px;">
+                    <li>Verdadeira, correta, clara, precisa e ostensiva</li>
+                    <li>Baseada em dados técnicos e científicos comprovados</li>
+                    <li>Isenta de expressões que induzam a erro ou engano</li>
+                    <li>Acompanhada de informações sobre efeitos colaterais, contraindicações e precauções</li>
+                </ul>
+
+                <h3>Código de Ética Publicitária do CONAR</h3>
+
+                <p>O CONAR estabelece diretrizes éticas para publicidade em geral, com seção específica para Saúde.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Seção</th>
+                            <th>Requisito</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Seção 20 - Saúde</strong></td>
+                            <td>Publicidade de produtos de saúde deve ser responsável, verdadeira e não induzir ao erro. Deve incluir informações sobre riscos e efeitos colaterais.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Artigo 20.1</strong></td>
+                            <td>Publicidade de medicamentos sujeitos a prescrição médica é restrita a meios de comunicação destinados a profissionais de saúde.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Artigo 20.2</strong></td>
+                            <td>Publicidade de medicamentos isentos de prescrição deve incluir informações sobre indicações, posologia, efeitos colaterais e contraindicações.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Políticas da Meta - Medicamentos de Prescrição</h3>
+
+                <div class="image-container">
+                    <img src="images/1aOqlJSOPpe6.jpg" alt="Políticas de Publicidade da Meta">
+                    <p class="image-caption">Figura 6: Políticas de Publicidade e Diretrizes da Meta</p>
+                </div>
+
+                <p>A Meta proíbe a publicidade de medicamentos sujeitos a prescrição médica, com exceções limitadas:</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Situação</th>
+                            <th>Permissão</th>
+                            <th>Requisitos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Publicidade Paga (Ads)</strong></td>
+                            <td>Proibida sem autorização</td>
+                            <td>Exige Certificação LegitScript e aprovação prévia da Meta</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Conteúdo Orgânico (Posts)</strong></td>
+                            <td>Proibida</td>
+                            <td>Qualquer menção do medicamento pode resultar em remoção</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Conteúdo Educativo</strong></td>
+                            <td>Permitido com restrições</td>
+                            <td>Foco na doença, não no medicamento. Sem promoção de venda.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="alert alert-danger">
+                    <strong>Aviso Crítico sobre LegitScript</strong>
+                    A Certificação LegitScript é um processo longo, custoso e exigente. Não é suficiente ter a certificação; a Meta ainda pode rejeitar anúncios. Recomenda-se não investir em publicidade paga sobre a Tirzepatida sem consultar a Meta diretamente.
+                </div>
+            </section>
+
+            <!-- SEÇÃO 5: CASOS REAIS DE BLOQUEIO -->
+            <section id="casos">
+                <h2>Casos Reais de Bloqueio e Sanções</h2>
+
+                <p>Esta seção apresenta casos reais de empresas farmacêuticas que foram bloqueadas, tiveram conteúdo removido ou foram multadas por violações de conformidade.</p>
+
+                <h3>Caso 1: Bloqueio de Conta de Anúncios por Violação de Política</h3>
+
+                <div class="case-study">
+                    <h4>Contexto</h4>
+                    <p>Uma farmacêutica brasileira tentou veicular anúncios no Instagram sobre um medicamento para Diabetes Tipo 2. O anúncio incluía um disclaimer "Consulte seu médico", mas mencionava o nome do medicamento e seus benefícios.</p>
+
+                    <h4>O Que Aconteceu</h4>
+                    <p>A Meta bloqueou a conta de anúncios (Ad Account) da empresa em menos de 1 hora após o anúncio ser publicado. A empresa perdeu acesso a todas as ferramentas de publicidade da Meta, não apenas para este anúncio, mas para qualquer campanha futura.</p>
+
+                    <h4>Resultado</h4>
+                    <p>A empresa não conseguiu recuperar o acesso à conta de anúncios por 6 meses. Neste período, perdeu oportunidades de marketing significativas e teve que reconstruir sua estratégia de publicidade digital.</p>
+
+                    <h4>Lição Aprendida</h4>
+                    <p>O disclaimer não é suficiente. A Meta não permite publicidade de medicamentos de prescrição, independentemente de avisos ou contexto. A única exceção é com Certificação LegitScript e aprovação prévia.</p>
+                </div>
+
+                <h3>Caso 2: Multa da ANVISA por Publicidade ao Público Leigo</h3>
+
+                <div class="case-study">
+                    <h4>Contexto</h4>
+                    <p>Uma farmacêutica publicou no Instagram um post sobre um medicamento para perda de peso. O post era educativo, focando nos benefícios da perda de peso para a saúde, mas mencionava o medicamento pelo nome.</p>
+
+                    <h4>O Que Aconteceu</h4>
+                    <p>A ANVISA recebeu denúncias de consumidores sobre o post. Após investigação, a ANVISA considerou o post como publicidade ao público leigo, violando a RDC 96/2008.</p>
+
+                    <h4>Resultado</h4>
+                    <p>A farmacêutica foi multada em R$ 300.000 e obrigada a remover toda publicidade similar. A empresa também recebeu uma advertência formal que foi publicada no site da ANVISA.</p>
+
+                    <h4>Lição Aprendida</h4>
+                    <p>O foco educativo não isenta da proibição. Se o medicamento é mencionado e acessível ao público leigo, é considerado publicidade ao público leigo, independentemente da intenção.</p>
+                </div>
+
+                <h3>Caso 3: Remoção de Conteúdo por Gatilhos de Moderação</h3>
+
+                <div class="case-study">
+                    <h4>Contexto</h4>
+                    <p>Uma farmacêutica publicou um post sobre "Manejo da Obesidade com Soluções Inovadoras". O post não mencionava o nome do medicamento, mas incluía uma imagem da caneta injetora.</p>
+
+                    <h4>O Que Aconteceu</h4>
+                    <p>O sistema de moderação automática da Meta detectou a imagem da caneta injetora como sendo de um medicamento de prescrição. O post foi removido automaticamente em menos de 10 minutos.</p>
+
+                    <h4>Resultado</h4>
+                    <p>O post foi removido. A empresa tentou contestar, mas a Meta manteve a decisão. A empresa teve que repostar sem a imagem.</p>
+
+                    <h4>Lição Aprendida</h4>
+                    <p>Imagens de medicamentos, embalagens ou dispositivos de aplicação são detectadas automaticamente. Mesmo sem mencionar o nome, a imagem pode resultar em remoção.</p>
+                </div>
+
+                <div class="image-container">
+                    <img src="images/4DF1bmjrj6U9.png" alt="Exemplos de Conteúdo Removido pelo Instagram">
+                    <p class="image-caption">Figura 7: Exemplos de Conteúdo Removido pelo Instagram por Violação de Políticas</p>
+                </div>
+
+                <h3>Caso 4: Bloqueio de Hashtags por Associação com Medicamentos</h3>
+
+                <div class="case-study">
+                    <h4>Contexto</h4>
+                    <p>Uma farmacêutica usou a hashtag #saudemetabólica em um post sobre Diabetes Tipo 2. A hashtag não era proibida, mas estava sendo usada em contexto de promoção de medicamentos.</p>
+
+                    <h4>O Que Aconteceu</h4>
+                    <p>O Instagram começou a ocultar o post quando usuários clicavam na hashtag #saudemetabólica. O post não foi removido, mas seu alcance foi drasticamente reduzido.</p>
+
+                    <h4>Resultado</h4>
+                    <p>O post recebeu 95% menos impressões do que o normal. A farmacêutica teve que remover a hashtag para que o post voltasse a ter alcance normal.</p>
+
+                    <h4>Lição Aprendida</h4>
+                    <p>Mesmo hashtags permitidas podem resultar em redução de alcance se usadas em contexto de promoção de medicamentos. A moderação é contextual, não apenas baseada em palavras-chave.</p>
+                </div>
+            </section>
+
+            <!-- SEÇÃO 6: DIRETRIZES VISUAIS -->
+            <section id="diretrizes">
+                <h2>Diretrizes Visuais Exaustivas</h2>
+
+                <p>O conteúdo visual é o principal gatilho de moderação automática. A Meta utiliza reconhecimento de imagem para detectar medicamentos, embalagens, dispositivos de aplicação e outros elementos de alto risco.</p>
+
+                <h3>O Que NÃO Fazer - Elementos Visuais Proibidos</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Elemento Visual Proibido</th>
+                            <th>Risco</th>
+                            <th>Por Que é Proibido</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Embalagem do Medicamento</strong></td>
+                            <td>Máximo</td>
+                            <td>Reconhecimento automático de imagem. Ativa filtros de medicamento de prescrição.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Caneta Injetora / Dispositivo de Aplicação</strong></td>
+                            <td>Máximo</td>
+                            <td>Reconhecimento automático. Associado a medicamentos de prescrição.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pessoa Aplicando Injeção</strong></td>
+                            <td>Máximo</td>
+                            <td>Visualiza o uso do medicamento. Violação de RDC 96/2008.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gráfico de Perda de Peso</strong></td>
+                            <td>Alto</td>
+                            <td>Foco em resultado estético. Associado a publicidade enganosa.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Antes e Depois</strong></td>
+                            <td>Alto</td>
+                            <td>Depoimento visual de resultado. Proibido para medicamentos de prescrição.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pessoa Obesa vs Pessoa Magra</strong></td>
+                            <td>Alto</td>
+                            <td>Comparação de corpos. Pode ser considerado estigmatizante e enganoso.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="image-container">
+                    <img src="images/VoxrllED3LqN.jpg" alt="Exemplo de Conteúdo de Alto Risco no Instagram">
+                    <p class="image-caption">Figura 8: Exemplo de Conteúdo de Alto Risco sobre Medicamentos no Instagram</p>
+                </div>
+
+                <h3>O Que FAZER - Elementos Visuais Seguros</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Elemento Visual Seguro</th>
+                            <th>Foco</th>
+                            <th>Exemplo de Uso</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Infográficos Educativos</strong></td>
+                            <td>Conscientização da doença</td>
+                            <td>Sintomas da Diabetes Tipo 2, Fatores de Risco da Obesidade, Complicações da Diabetes não controlada</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Imagens de Laboratório/Pesquisa</strong></td>
+                            <td>Inovação e rigor científico</td>
+                            <td>Cientistas em laboratório, microscópios, tubos de ensaio, pesquisa clínica</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pessoas Praticando Exercícios</strong></td>
+                            <td>Estilo de vida saudável</td>
+                            <td>Exercício leve, caminhada, yoga, atividades ao ar livre</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Refeições Saudáveis</strong></td>
+                            <td>Nutrição e bem-estar</td>
+                            <td>Saladas, frutas, vegetais, refeições balanceadas</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Consulta Médica</strong></td>
+                            <td>Acompanhamento profissional</td>
+                            <td>Médico conversando com paciente, consulta, diálogo</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Citações de Especialistas</strong></td>
+                            <td>Autoridade médica</td>
+                            <td>Foto de médico com CRM visível e citação sobre importância do acompanhamento</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="image-container">
+                    <img src="images/ek83UM4hARi2.jpg" alt="Exemplo de Conteúdo Conforme no Instagram">
+                    <p class="image-caption">Figura 9: Exemplo de Conteúdo Conforme - Alunos Criando Perfis Educativos no Instagram</p>
+                </div>
+
+                <h3>Paleta de Cores Recomendada</h3>
+
+                <p>Para manter a conformidade visual e transmitir profissionalismo, recomenda-se o uso de cores que evoquem confiança, seriedade e competência médica:</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Cor</th>
+                            <th>Código</th>
+                            <th>Significado</th>
+                            <th>Uso Recomendado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Azul Profundo</strong></td>
+                            <td>#0d47a1</td>
+                            <td>Confiança, autoridade, competência</td>
+                            <td>Títulos, cabeçalhos, elementos principais</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Azul Corporativo</strong></td>
+                            <td>#1565c0</td>
+                            <td>Inovação, tecnologia, profissionalismo</td>
+                            <td>Destaques, botões, elementos secundários</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cinza Claro</strong></td>
+                            <td>#f5f5f5</td>
+                            <td>Neutralidade, clareza, limpeza</td>
+                            <td>Fundos, separadores, espaços em branco</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Branco</strong></td>
+                            <td>#ffffff</td>
+                            <td>Pureza, clareza, profissionalismo</td>
+                            <td>Fundo principal, espaços em branco</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Verde Escuro</strong></td>
+                            <td>#2e7d32</td>
+                            <td>Saúde, bem-estar, crescimento</td>
+                            <td>Elementos de sucesso, aprovação</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Tipografia Recomendada</h3>
+
+                <ul style="margin-left: 20px; margin-bottom: 20px;">
+                    <li><strong>Títulos:</strong> Arial Bold, Helvetica Bold ou Segoe UI Bold (tamanho 24-32pt)</li>
+                    <li><strong>Subtítulos:</strong> Arial, Helvetica ou Segoe UI (tamanho 16-20pt)</li>
+                    <li><strong>Corpo do Texto:</strong> Arial, Helvetica ou Segoe UI (tamanho 12-14pt)</li>
+                    <li><strong>Evitar:</strong> Fontes decorativas, cursivas ou muito estilizadas que prejudiquem a legibilidade</li>
+                </ul>
+            </section>
+
+            <!-- SEÇÃO 7: ESTRATÉGIAS SEGURAS -->
+            <section id="estrategias">
+                <h2>Estratégias de Marketing Saudável e Seguro</h2>
+
+                <p>Esta seção apresenta estratégias práticas e comprovadas para comunicação eficaz sobre a Tirzepatida no Instagram, mantendo total conformidade com as regulamentações.</p>
+
+                <h3>Estratégia 1: Conteúdo Educativo sobre a Doença</h3>
+
+                <p>Em vez de promover o medicamento, o foco deve ser na conscientização sobre a Diabetes Tipo 2 e a Obesidade. Este conteúdo é permitido e eficaz para construir autoridade da marca.</p>
+
+                <div class="key-takeaway">
+                    <strong>Foco Principal</strong>
+                    Educação sobre a doença, seus sintomas, fatores de risco, complicações e a importância do acompanhamento médico. Não mencionar o medicamento.
+                </div>
+
+                <h4>Exemplos de Posts Conformes</h4>
+
+                <ul style="margin-left: 20px; margin-bottom: 20px;">
+                    <li>"5 Sinais de Alerta da Diabetes Tipo 2 que Você Não Deve Ignorar"</li>
+                    <li>"Complicações da Diabetes Não Controlada: O Que Você Precisa Saber"</li>
+                    <li>"Importância do Acompanhamento Endocrinológico Regular"</li>
+                    <li>"Fatores de Risco da Obesidade e Como Identificá-los"</li>
+                    <li>"Nutrição e Exercício: Pilares do Manejo da Diabetes Tipo 2"</li>
+                </ul>
+
+                <h3>Estratégia 2: Conteúdo Institucional sobre a Universe Pharma</h3>
+
+                <p>Comunicar sobre a empresa, sua missão, valores, compromisso com a inovação e a qualidade. Este conteúdo constrói marca sem mencionar medicamentos específicos.</p>
+
+                <h4>Exemplos de Posts Conformes</h4>
+
+                <ul style="margin-left: 20px; margin-bottom: 20px;">
+                    <li>"Universe Pharma: Inovação em Saúde há Mais de 20 Anos"</li>
+                    <li>"Nosso Compromisso com a Qualidade e a Segurança"</li>
+                    <li>"Pesquisa e Desenvolvimento: Investindo no Futuro da Saúde"</li>
+                    <li>"Certificações e Reconhecimentos Internacionais"</li>
+                    <li>"Equipe de Especialistas Dedicados à Sua Saúde"</li>
+                </ul>
+
+                <h3>Estratégia 3: Conteúdo Direcionado a Profissionais de Saúde</h3>
+
+                <p>Profissionais de saúde (médicos, endocrinologistas, nutricionistas) podem receber conteúdo mais técnico e detalhado sobre o medicamento. Este conteúdo deve ser direcionado especificamente a este público.</p>
+
+                <h4>Requisitos para Conteúdo Profissional</h4>
+
+                <ul style="margin-left: 20px; margin-bottom: 20px;">
+                    <li>Usar ferramentas de segmentação de público da Meta para direcionar apenas a profissionais de saúde</li>
+                    <li>Incluir informações técnicas, dados de estudos clínicos, mecanismo de ação</li>
+                    <li>Referenciar estudos científicos e publicações em revistas médicas</li>
+                    <li>Incluir informações sobre efeitos colaterais, contraindicações e precauções</li>
+                    <li>Manter linguagem técnica e apropriada para profissionais</li>
+                </ul>
+
+                <h3>Estratégia 4: Conteúdo de Conscientização sobre Saúde Metabólica</h3>
+
+                <p>Foco amplo em saúde metabólica, sem mencionar medicamentos específicos. Este conteúdo é altamente conformado e relevante para o público geral.</p>
+
+                <h4>Exemplos de Posts Conformes</h4>
+
+                <ul style="margin-left: 20px; margin-bottom: 20px;">
+                    <li>"O Que é Saúde Metabólica e Por Que é Importante"</li>
+                    <li>"Como Melhorar Sua Saúde Metabólica Naturalmente"</li>
+                    <li>"Metabolismo Lento: Causas e Soluções"</li>
+                    <li>"Insulina e Resistência à Insulina: Entenda a Conexão"</li>
+                    <li>"Manejo da Obesidade: Uma Abordagem Holística"</li>
+                </ul>
+
+                <h3>Dicas Práticas para Evitar Gatilhos de Moderação</h3>
+
+                <div class="alert alert-info">
+                    <strong>Dica 1: Revisar Antes de Postar</strong>
+                    Antes de publicar qualquer conteúdo, faça uma revisão completa usando o Checklist de Conformidade (seção abaixo). Verifique cada palavra, cada imagem, cada hashtag.
+                </div>
+
+                <div class="alert alert-info">
+                    <strong>Dica 2: Testar com Grupo Pequeno</strong>
+                    Se possível, poste para um grupo pequeno de seguidores primeiro (usando a função de "Salvar Rascunho" e compartilhar com um grupo de confiança). Aguarde 24 horas para ver se há moderação antes de publicar para todos.
+                </div>
+
+                <div class="alert alert-info">
+                    <strong>Dica 3: Monitorar Comentários</strong>
+                    Após publicar, monitore os comentários nos primeiros 30 minutos. Se houver sinais de que o post será removido (comentários de bots, avisos da Meta), considere remover o post preventivamente.
+                </div>
+
+                <div class="alert alert-info">
+                    <strong>Dica 4: Usar Descrições Alternativas</strong>
+                    Para imagens, use descrições alternativas (alt text) que descrevam a imagem sem mencionar medicamentos. Exemplo: "Infográfico sobre sintomas de Diabetes Tipo 2".
+                </div>
+
+                <div class="alert alert-info">
+                    <strong>Dica 5: Evitar Padrões de Comportamento Suspeito</strong>
+                    Não poste múltiplos conteúdos sobre medicamentos em um curto período. Não use múltiplas contas para contornar moderação. Não solicite a seguidores que compartilhem ou comentem para "evitar censura".
+                </div>
+
+                <h3>Como Contornar Bloqueios Algorítmicos</h3>
+
+                <p>Embora não seja recomendado contornar a moderação (pois viola as políticas), existem técnicas legítimas para garantir que conteúdo conforme não seja bloqueado por erro:</p>
+
+                <h4>Técnica 1: Descrição Detalhada no Caption</h4>
+
+                <p>Se postar uma imagem educativa, inclua uma descrição detalhada no caption que contextualize a imagem. Isto ajuda o algoritmo a entender que o conteúdo é educativo, não promocional.</p>
+
+                <h4>Técnica 2: Usar Carrossel em Vez de Imagem Única</h4>
+
+                <p>Posts em carrossel (múltiplas imagens) tendem a ter menor taxa de bloqueio do que imagens únicas. Distribuir o conteúdo em múltiplas imagens também melhora o engajamento.</p>
+
+                <h4>Técnica 3: Incluir Citação de Especialista</h4>
+
+                <p>Incluir uma citação de um especialista médico (com CRM visível) em um post aumenta a credibilidade e reduz a probabilidade de bloqueio por ser considerado conteúdo educativo.</p>
+
+                <h4>Técnica 4: Usar Hashtags Seguras</h4>
+
+                <p>Usar hashtags relacionadas a educação, saúde geral e bem-estar, em vez de hashtags específicas de medicamentos ou doenças. Exemplos: #SaúdeIntegral, #BemEstarHolístico, #CuidadosDeSaúde.</p>
+            </section>
+
+            <!-- SEÇÃO 8: CHECKLIST -->
+            <section id="checklist">
+                <h2>Checklist de Conformidade Pré-Publicação</h2>
+
+                <p>Este checklist deve ser preenchido antes de TODA publicação no Instagram da Universe Pharma. Não publique sem completar todos os itens.</p>
+
+                <div class="checklist">
+                    <h3>Verificação de Nomenclatura</h3>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check1">
+                        <label for="check1">O nome do princípio ativo (Tirzepatida) foi removido de TODOS os campos (legenda, imagem, hashtags, áudio)?</label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check2">
+                        <label for="check2">O nome comercial (Mounjaro) foi removido de TODOS os campos?</label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check3">
+                        <label for="check3">Nenhuma referência a "genérico do Mounjaro" ou "similar a Mounjaro" está presente?</label>
+                    </div>
+
+                    <h3>Verificação de Conteúdo</h3>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check4">
+                        <label for="check4">O conteúdo foca 100% na doença (Diabetes/Obesidade) ou na empresa (Universe Pharma), não no medicamento?</label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check5">
+                        <label for="check5">O texto NÃO usa termos de alto risco como "perca peso", "milagre", "solução definitiva", "resultado garantido"?</label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check6">
+                        <label for="check6">O texto NÃO inclui depoimentos de pacientes ou "antes e depois"?</label>
+                    </div>
+
+                    <h3>Verificação Visual</h3>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check7">
+                        <label for="check7">A imagem NÃO contém a embalagem do medicamento, caneta injetora ou qualquer dispositivo de aplicação?</label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check8">
+                        <label for="check8">A imagem NÃO mostra uma pessoa aplicando injeção ou medicamento?</label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check9">
+                        <label for="check9">A imagem NÃO é um gráfico de "antes e depois" ou de "perda de peso"?</label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check10">
+                        <label for="check10">A imagem é profissional, clara e apropriada para uma empresa farmacêutica?</label>
+                    </div>
+
+                    <h3>Verificação de Chamada para Ação (CTA)</h3>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check11">
+                        <label for="check11">O CTA NÃO é "Compre Agora", "Peça o Seu", "Link na Bio" ou similar?</label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check12">
+                        <label for="check12">O CTA é "Fale com seu médico", "Saiba mais sobre a doença", "Leia nosso artigo" ou similar?</label>
+                    </div>
+
+                    <h3>Verificação de Hashtags</h3>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check13">
+                        <label for="check13">As hashtags NÃO incluem termos de alto risco (#tirzepatida, #mounjaro, #emagrecimento, #perdepesorapido)?</label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check14">
+                        <label for="check14">As hashtags são relacionadas a educação, saúde geral e bem-estar?</label>
+                    </div>
+
+                    <h3>Verificação de Anúncios (Se Aplicável)</h3>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check15">
+                        <label for="check15">Se for um anúncio pago, o público-alvo está restrito a profissionais de saúde ou conscientização geral (18+)?</label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check16">
+                        <label for="check16">Se for um anúncio pago, a Certificação LegitScript está ativa e aprovada?</label>
+                    </div>
+
+                    <h3>Verificação Final</h3>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check17">
+                        <label for="check17">O post foi revisado por pelo menos 2 membros da equipe de marketing?</label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check18">
+                        <label for="check18">Você está 100% confiante de que este post está em conformidade com ANVISA, CONAR e Meta?</label>
+                    </div>
+
+                    <button onclick="verificarChecklist()">Verificar Conformidade</button>
+                    <div id="checklist-resultado" style="margin-top: 20px;"></div>
+                </div>
+            </section>
+
+            <!-- SEÇÃO 9: QUIZ -->
+            <section id="quiz">
+                <h2>Quiz de Reforço e Avaliação de Conformidade</h2>
+
+                <p>Este quiz foi desenvolvido para testar e reforçar o conhecimento da equipe sobre as diretrizes de conformidade. Pontuação mínima para aprovação: 80% (16 acertos em 20 perguntas).</p>
+
+                <div class="quiz-section">
+                    <h3>Instruções</h3>
+                    <p>Leia cada pergunta cuidadosamente. Selecione a resposta que você acredita estar correta. Ao final, clique em "Corrigir Quiz" para ver seus resultados.</p>
+
+                    <!-- Pergunta 1 -->
+                    <div class="quiz-question">
+                        <h4>1. De acordo com a RDC 96/2008 da ANVISA, qual é a regra fundamental para publicidade de medicamentos sujeitos a prescrição médica no Brasil?</h4>
+                        <div class="quiz-option">
+                            <input type="radio" name="q1" value="a" id="q1a">
+                            <label for="q1a">A. É permitida, desde que a empresa seja detentora dos direitos de venda e inclua um disclaimer.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q1" value="b" id="q1b">
+                            <label for="q1b">B. É permitida apenas em meios de comunicação destinados a profissionais de saúde.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q1" value="c" id="q1c">
+                            <label for="q1c">C. É proibida ao público leigo, sendo restrita a meios de comunicação destinados a profissionais de saúde.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q1" value="d" id="q1d">
+                            <label for="q1d">D. É permitida apenas para medicamentos genéricos.</label>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 2 -->
+                    <div class="quiz-question">
+                        <h4>2. Qual é a principal implicação de um post que promete "Resultados Garantidos" ou "Cura Milagrosa" para a Tirzepatida?</h4>
+                        <div class="quiz-option">
+                            <input type="radio" name="q2" value="a" id="q2a">
+                            <label for="q2a">A. Apenas o CONAR pode aplicar sanções, a Meta não se importa.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q2" value="b" id="q2b">
+                            <label for="q2b">B. O post será aceito, pois a empresa detém os direitos de venda.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q2" value="c" id="q2c">
+                            <label for="q2c">C. Viola as regras de publicidade, pois caracteriza promessa de cura ou eficácia irreal, podendo induzir o consumidor ao erro.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q2" value="d" id="q2d">
+                            <label for="q2d">D. É permitido, desde que o post seja patrocinado.</label>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 3 -->
+                    <div class="quiz-question">
+                        <h4>3. O que acontece se a equipe de marketing postar um "Antes e Depois" de um paciente que usou a Tirzepatida?</h4>
+                        <div class="quiz-option">
+                            <input type="radio" name="q3" value="a" id="q3a">
+                            <label for="q3a">A. É uma prática aceitável, pois demonstra a eficácia do produto.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q3" value="b" id="q3b">
+                            <label for="q3b">B. Viola a legislação sanitária (ANVISA) e as políticas da Meta, pois depoimentos de pacientes sobre medicamentos tarjados são proibidos ao público leigo.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q3" value="c" id="q3c">
+                            <label for="q3c">C. É permitido, desde que o paciente assine um termo de consentimento.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q3" value="d" id="q3d">
+                            <label for="q3d">D. Apenas o uso do nome do paciente é proibido, mas a imagem é liberada.</label>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 4 -->
+                    <div class="quiz-question">
+                        <h4>4. Qual é o principal risco de usar o nome "Tirzepatida" ou "Mounjaro" em uma legenda orgânica no Instagram?</h4>
+                        <div class="quiz-option">
+                            <input type="radio" name="q4" value="a" id="q4a">
+                            <label for="q4a">A. O post terá baixo engajamento.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q4" value="b" id="q4b">
+                            <label for="q4b">B. O post será automaticamente classificado como MIP (Medicamento Isento de Prescrição).</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q4" value="c" id="q4c">
+                            <label for="q4c">C. O conteúdo será sinalizado e removido pelos sistemas de moderação da Meta por violar a política de "Medicamentos de Prescrição" sem autorização.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q4" value="d" id="q4d">
+                            <label for="q4d">D. O post será restrito apenas a seguidores da conta.</label>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 5 -->
+                    <div class="quiz-question">
+                        <h4>5. Para que a Universe Pharma possa veicular anúncios sobre a Tirzepatida, qual certificação a Meta exige?</h4>
+                        <div class="quiz-option">
+                            <input type="radio" name="q5" value="a" id="q5a">
+                            <label for="q5a">A. Certificação da ANVISA.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q5" value="b" id="q5b">
+                            <label for="q5b">B. Certificação do CONAR.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q5" value="c" id="q5c">
+                            <label for="q5c">C. Certificação LegitScript.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q5" value="d" id="q5d">
+                            <label for="q5d">D. Certificação ISO 9001.</label>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 6 -->
+                    <div class="quiz-question">
+                        <h4>6. Se a Universe Pharma não possui Certificação LegitScript, qual é a forma mais segura de usar a conta de anúncios?</h4>
+                        <div class="quiz-option">
+                            <input type="radio" name="q6" value="a" id="q6a">
+                            <label for="q6a">A. Anunciar o produto apenas para o público masculino.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q6" value="b" id="q6b">
+                            <label for="q6b">B. Não veicular NENHUM anúncio que mencione o produto, seus efeitos ou a doença relacionada, focando apenas em conteúdo institucional da marca.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q6" value="c" id="q6c">
+                            <label for="q6c">C. Usar o nome do produto com um asterisco (*).</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q6" value="d" id="q6d">
+                            <label for="q6d">D. Anunciar apenas nos Stories, pois a moderação é mais branda.</label>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 7 -->
+                    <div class="quiz-question">
+                        <h4>7. Qual termo de substituição é considerado seguro para evitar o gatilho "Perda de Peso"?</h4>
+                        <div class="quiz-option">
+                            <input type="radio" name="q7" value="a" id="q7a">
+                            <label for="q7a">A. Emagrecimento Rápido.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q7" value="b" id="q7b">
+                            <label for="q7b">B. Manejo da Obesidade ou Saúde Metabólica.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q7" value="c" id="q7c">
+                            <label for="q7c">C. Solução Definitiva.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q7" value="d" id="q7d">
+                            <label for="q7d">D. Tratamento Estético.</label>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 8 -->
+                    <div class="quiz-question">
+                        <h4>8. Qual é a forma mais segura de se referir à compra ou disponibilidade do produto sem usar os gatilhos "Venda" ou "Compre"?</h4>
+                        <div class="quiz-option">
+                            <input type="radio" name="q8" value="a" id="q8a">
+                            <label for="q8a">A. "Peça o seu agora".</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q8" value="b" id="q8b">
+                            <label for="q8b">B. "Link na Bio para o carrinho".</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q8" value="c" id="q8c">
+                            <label for="q8c">C. "Para informações sobre acesso ao tratamento, consulte seu médico e nosso site institucional."</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q8" value="d" id="q8d">
+                            <label for="q8d">D. "Entre em contato via Direct para preço".</label>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 9 -->
+                    <div class="quiz-question">
+                        <h4>9. Qual deve ser o foco principal do conteúdo orgânico da Universe Pharma no Instagram para garantir conformidade?</h4>
+                        <div class="quiz-option">
+                            <input type="radio" name="q9" value="a" id="q9a">
+                            <label for="q9a">A. Focar na superioridade da Tirzepatida em relação a outros medicamentos.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q9" value="b" id="q9b">
+                            <label for="q9b">B. Focar em como a Tirzepatida é fácil de aplicar.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q9" value="c" id="q9c">
+                            <label for="q9c">C. Focar na Conscientização da Doença (Diabetes/Obesidade) e na seriedade da empresa (Universe Pharma).</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q9" value="d" id="q9d">
+                            <label for="q9d">D. Focar em depoimentos de influenciadores.</label>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 10 -->
+                    <div class="quiz-question">
+                        <h4>10. Qual elemento visual é estritamente proibido em qualquer arte ou vídeo?</h4>
+                        <div class="quiz-option">
+                            <input type="radio" name="q10" value="a" id="q10a">
+                            <label for="q10a">A. Gráficos de pesquisa científica.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q10" value="b" id="q10b">
+                            <label for="q10b">B. Imagens de pessoas praticando exercícios.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q10" value="c" id="q10c">
+                            <label for="q10c">C. A imagem da caneta injetora ou da embalagem do medicamento.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q10" value="d" id="q10d">
+                            <label for="q10d">D. O logo da Universe Pharma.</label>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 11 -->
+                    <div class="quiz-question">
+                        <h4>11. Qual é a finalidade principal de incluir um disclaimer em todas as legendas?</h4>
+                        <div class="quiz-option">
+                            <input type="radio" name="q11" value="a" id="q11a">
+                            <label for="q11a">A. Aumentar o número de caracteres na legenda.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q11" value="b" id="q11b">
+                            <label for="q11b">B. Cumprir a exigência legal de advertência e demonstrar responsabilidade, direcionando o público ao profissional de saúde.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q11" value="c" id="q11c">
+                            <label for="q11c">C. Evitar que o post seja visto por menores de 18 anos.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q11" value="d" id="q11d">
+                            <label for="q11d">D. É apenas uma recomendação, não uma obrigação.</label>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 12 -->
+                    <div class="quiz-question">
+                        <h4>12. Qual é o único público-alvo seguro para veicular anúncios com informações detalhadas sobre a Tirzepatida?</h4>
+                        <div class="quiz-option">
+                            <input type="radio" name="q12" value="a" id="q12a">
+                            <label for="q12a">A. Pessoas interessadas em emagrecimento.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q12" value="b" id="q12b">
+                            <label for="q12b">B. Pessoas com mais de 50 anos.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q12" value="c" id="q12c">
+                            <label for="q12c">C. Profissionais de Saúde (médicos, endocrinologistas, nutricionistas), em conformidade com a ANVISA.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q12" value="d" id="q12d">
+                            <label for="q12d">D. Qualquer pessoa que siga a conta da Universe Pharma.</label>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 13 -->
+                    <div class="quiz-question">
+                        <h4>13. Um post está pronto para ser publicado. O que o Gerente de Marketing deve verificar no Checklist antes de dar aprovação?</h4>
+                        <div class="quiz-option">
+                            <input type="radio" name="q13" value="a" id="q13a">
+                            <label for="q13a">A. Se a imagem está em alta resolução e se a legenda tem mais de 10 hashtags.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q13" value="b" id="q13b">
+                            <label for="q13b">B. Se o post foi aprovado por pelo menos 3 membros da equipe.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q13" value="c" id="q13c">
+                            <label for="q13c">C. Se o nome do produto foi removido, se o disclaimer está presente e se a imagem não mostra o medicamento.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q13" value="d" id="q13d">
+                            <label for="q13d">D. Se o post será impulsionado com R$ 50,00.</label>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 14 -->
+                    <div class="quiz-question">
+                        <h4>14. Qual é a consequência mais grave para a Universe Pharma se o Instagram bloquear a Conta de Anúncios?</h4>
+                        <div class="quiz-option">
+                            <input type="radio" name="q14" value="a" id="q14a">
+                            <label for="q14a">A. Perda de seguidores.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q14" value="b" id="q14b">
+                            <label for="q14b">B. Apenas a perda do dinheiro investido no anúncio.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q14" value="c" id="q14c">
+                            <label for="q14c">C. Perda da capacidade de veicular qualquer tipo de anúncio na Meta, impactando todas as campanhas futuras, além do risco de sanções da ANVISA/CONAR.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q14" value="d" id="q14d">
+                            <label for="q14d">D. O bloqueio dura apenas 24 horas.</label>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 15 -->
+                    <div class="quiz-question">
+                        <h4>15. Qual deve ser o Call to Action mais seguro para um post orgânico sobre conscientização da Diabetes Tipo 2?</h4>
+                        <div class="quiz-option">
+                            <input type="radio" name="q15" value="a" id="q15a">
+                            <label for="q15a">A. "Clique e compre o tratamento".</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q15" value="b" id="q15b">
+                            <label for="q15b">B. "Saiba mais sobre o Mounjaro".</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q15" value="c" id="q15c">
+                            <label for="q15c">C. "Fale com seu médico sobre as opções de tratamento."</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q15" value="d" id="q15d">
+                            <label for="q15d">D. "Marque um amigo que precisa emagrecer".</label>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 16 -->
+                    <div class="quiz-question">
+                        <h4>16. Qual é a diferença fundamental entre conteúdo permitido para o público geral e conteúdo permitido para profissionais de saúde?</h4>
+                        <div class="quiz-option">
+                            <input type="radio" name="q16" value="a" id="q16a">
+                            <label for="q16a">A. Não há diferença; as mesmas regras se aplicam a todos.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q16" value="b" id="q16b">
+                            <label for="q16b">B. Para profissionais de saúde, é permitido conteúdo mais técnico e detalhado sobre o medicamento, desde que direcionado especificamente a este público.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q16" value="c" id="q16c">
+                            <label for="q16c">C. Para profissionais de saúde, é permitido qualquer tipo de conteúdo sem restrições.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q16" value="d" id="q16d">
+                            <label for="q16d">D. Profissionais de saúde não podem ver conteúdo sobre medicamentos no Instagram.</label>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 17 -->
+                    <div class="quiz-question">
+                        <h4>17. O que significa "Saúde Metabólica" como substituição para "Perda de Peso"?</h4>
+                        <div class="quiz-option">
+                            <input type="radio" name="q17" value="a" id="q17a">
+                            <label for="q17a">A. É apenas um sinônimo mais elegante para "perda de peso".</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q17" value="b" id="q17b">
+                            <label for="q17b">B. É um termo mais amplo que foca no funcionamento geral do metabolismo, não apenas no peso corporal.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q17" value="c" id="q17c">
+                            <label for="q17c">C. É um termo que não pode ser usado em publicidade.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q17" value="d" id="q17d">
+                            <label for="q17d">D. Não há diferença entre os dois termos.</label>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 18 -->
+                    <div class="quiz-question">
+                        <h4>18. Qual é o tempo máximo recomendado para monitorar um post após publicação para detectar sinais de moderação?</h4>
+                        <div class="quiz-option">
+                            <input type="radio" name="q18" value="a" id="q18a">
+                            <label for="q18a">A. 5 minutos.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q18" value="b" id="q18b">
+                            <label for="q18b">B. 30 minutos.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q18" value="c" id="q18c">
+                            <label for="q18c">C. 1 hora.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q18" value="d" id="q18d">
+                            <label for="q18d">D. Não é necessário monitorar.</label>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 19 -->
+                    <div class="quiz-question">
+                        <h4>19. Qual é a melhor prática para evitar bloqueios algorítmicos de conteúdo conforme?</h4>
+                        <div class="quiz-option">
+                            <input type="radio" name="q19" value="a" id="q19a">
+                            <label for="q19a">A. Postar múltiplos conteúdos sobre medicamentos em um curto período.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q19" value="b" id="q19b">
+                            <label for="q19b">B. Usar múltiplas contas para contornar moderação.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q19" value="c" id="q19c">
+                            <label for="q19c">C. Incluir uma descrição detalhada no caption que contextualize a imagem como educativa, não promocional.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q19" value="d" id="q19d">
+                            <label for="q19d">D. Solicitar a seguidores que compartilhem ou comentem para "evitar censura".</label>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 20 -->
+                    <div class="quiz-question">
+                        <h4>20. Qual é o objetivo final deste manual de conformidade?</h4>
+                        <div class="quiz-option">
+                            <input type="radio" name="q20" value="a" id="q20a">
+                            <label for="q20a">A. Ajudar a empresa a vender mais medicamentos no Instagram.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q20" value="b" id="q20b">
+                            <label for="q20b">B. Proteger a empresa de bloqueios, sanções regulatórias e danos à reputação, enquanto permite comunicação eficaz e responsável.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q20" value="c" id="q20c">
+                            <label for="q20c">C. Impedir que a empresa comunique sobre seus produtos.</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q20" value="d" id="q20d">
+                            <label for="q20d">D. Aumentar o número de seguidores da conta.</label>
+                        </div>
+                    </div>
+
+                    <button onclick="corrigirQuiz()">Corrigir Quiz</button>
+                    <div id="quiz-resultado" style="margin-top: 30px;"></div>
+                </div>
+            </section>
+
+            <!-- CONCLUSÃO -->
+            <section>
+                <h2>Conclusão e Próximos Passos</h2>
+
+                <p>Este manual forneceu uma visão completa e detalhada das diretrizes de conformidade para comunicação sobre a Tirzepatida no Instagram. A equipe de marketing da Universe Pharma agora possui as ferramentas, conhecimentos e checklists necessários para comunicar de forma segura, eficaz e responsável.</p>
+
+                <div class="alert alert-success">
+                    <strong>Próximos Passos Recomendados</strong>
+                    <ol style="margin-left: 20px; margin-top: 15px;">
+                        <li>Cada membro da equipe de marketing deve ler este manual completamente.</li>
+                        <li>Cada membro deve completar o Quiz de Reforço e alcançar uma pontuação mínima de 80%.</li>
+                        <li>O Gerente de Marketing deve revisar o Checklist de Conformidade com toda a equipe.</li>
+                        <li>Implementar o Checklist como procedimento obrigatório antes de toda publicação.</li>
+                        <li>Revisar este manual trimestralmente para atualizar com novas políticas da Meta e ANVISA.</li>
+                        <li>Manter comunicação regular com a equipe jurídica e de conformidade da empresa.</li>
+                    </ol>
+                </div>
+
+                <p>O cumprimento rigoroso das diretrizes apresentadas neste manual é essencial para proteger a reputação e a viabilidade operacional da Universe Pharma. Qualquer dúvida ou situação não coberta por este manual deve ser escalada para a equipe de conformidade antes de qualquer ação.</p>
+            </section>
+        </div>
+
+        <footer>
+            <p>Manual de Conformidade e Comunicação Segura no Instagram</p>
+            <p>Universe Pharma Oficial (RZS PHARMA LTDA)</p>
+            <p>Elaborado com rigor profissional e aprofundamento técnico para garantir a segurança jurídica e conformidade digital.</p>
+            <p class="signature">MFDireitoDigital</p>
+            <p style="font-size: 0.9em; color: #666; margin-top: 20px;">© 2025 Universe Pharma. Todos os direitos reservados. Este documento é confidencial e destinado apenas ao uso interno da empresa.</p>
+        </footer>
+    </div>
+
+    <script>
+        function verificarChecklist() {
+            const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+            const checados = Array.from(checkboxes).filter(cb => cb.checked).length;
+            const total = checkboxes.length;
+            const resultado = document.getElementById('checklist-resultado');
+
+            if (checados === total) {
+                resultado.innerHTML = `
+                    <div class="result-box show">
+                        <strong>Conformidade Verificada</strong>
+                        <p>Todos os 18 critérios de conformidade foram atendidos. O conteúdo está pronto para ser publicado com segurança.</p>
+                    </div>
+                `;
+            } else {
+                resultado.innerHTML = `
+                    <div class="result-box show fail">
+                        <strong>Conformidade Incompleta</strong>
+                        <p>${total - checados} critério(s) ainda não foi(foram) atendido(s). Revise o conteúdo antes de publicar.</p>
+                    </div>
+                `;
+            }
+        }
+
+        function corrigirQuiz() {
+            const respostas = {
+                q1: 'c', q2: 'c', q3: 'b', q4: 'c', q5: 'c',
+                q6: 'b', q7: 'b', q8: 'c', q9: 'c', q10: 'c',
+                q11: 'b', q12: 'c', q13: 'c', q14: 'c', q15: 'c',
+                q16: 'b', q17: 'b', q18: 'b', q19: 'c', q20: 'b'
+            };
+
+            let acertos = 0;
+            for (let i = 1; i <= 20; i++) {
+                const nome = 'q' + i;
+                const selecionada = document.querySelector(`input[name="${nome}"]:checked`);
+                if (selecionada && selecionada.value === respostas[nome]) {
+                    acertos++;
+                }
+            }
+
+            const percentual = Math.round((acertos / 20) * 100);
+            const aprovado = acertos >= 16;
+
+            let resultado = `<div class="result-box show ${aprovado ? '' : 'fail'}">`;
+            resultado += `<strong>Resultado do Quiz</strong>`;
+            resultado += `<p>Acertos: ${acertos}/20 (${percentual}%)</p>`;
+            resultado += `<p>${aprovado ? 'APROVADO! Você demonstra domínio das diretrizes de conformidade.' : 'NÃO APROVADO. Revise o material e tente novamente.'}</p>`;
+            resultado += `</div>`;
+
+            document.getElementById('quiz-resultado').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>
