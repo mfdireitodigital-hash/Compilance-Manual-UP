@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Reel Papercraft - 5 Sinais de Alerta da Diabetes Tipo 2</title>
+<style>
+  html,body{margin:0;padding:0;background:#111;}
+  #stage{
+    position:relative;width:1080px;height:1920px;overflow:hidden;
+    background:
+      radial-gradient(1400px 900px at 50% 18%, rgba(255,250,235,.55), rgba(0,0,0,0) 60%),
+      radial-gradient(1600px 1200px at 50% 108%, rgba(90,60,20,.28), rgba(0,0,0,0) 55%),
+      #e3d5b8;
+    font-family:'Segoe UI','Helvetica Neue',Arial,'Liberation Sans','DejaVu Sans',sans-serif;
+  }
+  .el{position:absolute;will-change:transform,opacity;opacity:0;}
+  .paper{position:relative;}
+  .paper > svg.bg{position:absolute;inset:-14px;width:calc(100% + 28px);height:calc(100% + 28px);z-index:0;}
+  .paper > .inner{position:relative;z-index:1;}
+  .sh-lg{filter:drop-shadow(0 22px 26px rgba(70,45,10,.34));}
+  .sh-md{filter:drop-shadow(0 12px 16px rgba(70,45,10,.30));}
+  .sh-sm{filter:drop-shadow(0 6px 9px rgba(70,45,10,.28));}
+  .grain{position:absolute;inset:0;z-index:50;pointer-events:none;opacity:.05;}
+</style>
+</head>
+<body>
+<div id="stage">
+  <svg class="grain" width="1080" height="1920">
+    <filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7"/></filter>
+    <rect width="1080" height="1920" filter="url(#n)"/>
+  </svg>
+</div>
+
+<script>
+/* ---------- deterministic PRNG for torn paper edges ---------- */
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+
+/* jagged "torn paper" polygon for a w x h panel (padding 14 built in) */
+function paperSVG(w,h,color,seed,jag){
+  jag=jag||7;
+  const rnd=mulberry32(seed), W=w+28, H=h+28, P=14;
+  const pts=[]; const step=34;
+  function edge(x0,y0,x1,y1){
+    const dx=x1-x0, dy=y1-y0, len=Math.hypot(dx,dy), n=Math.max(2,Math.round(len/step));
+    for(let i=0;i<n;i++){
+      const t=i/n, nx=-dy/len, ny=dx/len, off=(rnd()*2-1)*jag;
+      pts.push([x0+dx*t+nx*off, y0+dy*t+ny*off]);
+    }
+  }
+  edge(P,P,W-P,P); edge(W-P,P,W-P,H-P); edge(W-P,H-P,P,H-P); edge(P,H-P,P,P);
+  const d=pts.map(p=>p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');
+  return `<svg class="bg" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none"><polygon points="${d}" fill="${color}"/></svg>`;
+}
+
+/* ---------- element factory ---------- */
+const stage=document.getElementById('stage');
+function el(html,style){
+  const d=document.createElement('div');
+  d.className='el'; d.innerHTML=html;
+  Object.assign(d.style,style);
+  stage.appendChild(d); return d;
+}
+function card(w,h,color,seed,innerHTML,style,shadow){
+  return el(`<div class="paper ${shadow||'sh-lg'}" style="width:${w}px;height:${h}px">${paperSVG(w,h,color,seed)}<div class="inner" style="width:100%;height:100%">${innerHTML}</div></div>`,style);
+}
+
+/* ---------- tween engine (deterministic, driven by __seek) ---------- */
+const tweens=[];
+const E={
+  linear:t=>t,
+  outCubic:t=>1-Math.pow(1-t,3),
+  inCubic:t=>t*t*t,
+  outBack:t=>{const c=2.0;return 1+(c+1)*Math.pow(t-1,3)+c*Math.pow(t-1,2)},
+  inBack:t=>{const c=1.7;return (c+1)*t*t*t-c*t*t}
+};
+const byEl=new Map();
+function tw(elm,t0,t1,from,to,ease){
+  const k={el:elm,t0,t1,from,to,ease:ease||'outCubic'};
+  tweens.push(k);
+  if(!byEl.has(elm))byEl.set(elm,[]);
+  byEl.get(elm).push(k);
+}
+function seek(ms){
+  for(const [elm,list] of byEl){
+    const s={x:0,y:0,r:0,sc:1,o:0};
+    const started=list.filter(k=>ms>=k.t0).sort((a,b)=>a.t0-b.t0);
+    if(started.length===0){
+      // antes do primeiro tween: aplica o estado inicial dele
+      const f=list.slice().sort((a,b)=>a.t0-b.t0)[0];
+      for(const prop of ['x','y','r','sc','o']){
+        if(f.from[prop]!==undefined)s[prop]=f.from[prop];
+      }
+    }else{
+      for(const k of started){
+        const p=ms>=k.t1?1:(ms-k.t0)/(k.t1-k.t0);
+        const e=E[k.ease](p);
+        for(const prop of ['x','y','r','sc','o']){
+          if(k.from[prop]!==undefined){s[prop]=k.from[prop]+(k.to[prop]-k.from[prop])*e}
+        }
+      }
+    }
+    elm.style.transform=`translate(${s.x}px,${s.y}px) rotate(${s.r}deg) scale(${s.sc})`;
+    elm.style.opacity=s.o;
+  }
+}
+window.__seek=seek;
+
+/* enter = drop in with rotation settle; exit = slide away */
+function enter(elm,t0,rot,fromY,dur){
+  tw(elm,t0,t0+(dur||620),{y:fromY===undefined?-900:fromY,r:(rot||0)-16,o:0,x:0,sc:1},{y:0,r:rot||0,o:1,x:0,sc:1},'outBack');
+}
+function exit(elm,t0,dir){
+  tw(elm,t0,t0+420,{},{y:dir==='up'?-1100:1300,r:10,o:0},'inBack');
+  // '{}' from: carry current — engine needs explicit from; patch below
+}
+/* engine needs explicit from-values; wrap exit with known rest state */
+function exitFrom(elm,t0,rot,dir){
+  tw(elm,t0,t0+430,{y:0,r:rot||0,o:1},{y:dir==='up'?-1200:1350,r:(rot||0)+12,o:0},'inCubic');
+}
+
+/* ---------- palette (manual da Universe Pharma) ---------- */
+const BLUE='#0d47a1', BLUE2='#1565c0', GREEN='#2e7d32', WHITE='#fdfcf8', CREAM='#f6eeda', INK='#2c3e50', GRAY='#90a4ae';
+
+/* ================================================================
+   SCENE 0 — INTRO  (0 .. 3600)
+================================================================ */
+(function(){
+  const chip=card(560,86,WHITE,11,
+    `<div style="display:flex;align-items:center;justify-content:center;height:100%;font-weight:700;letter-spacing:6px;font-size:30px;color:${BLUE2}">CONTEÚDO EDUCATIVO</div>`,
+    {left:'260px',top:'270px'},'sh-sm');
+  const p1=card(880,330,BLUE,21,
+    `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;color:#fff">
+       <div style="font-size:150px;font-weight:800;line-height:1">5 SINAIS</div>
+       <div style="font-size:96px;font-weight:800;line-height:1.1">DE ALERTA</div>
+     </div>`,
+    {left:'100px',top:'480px'});
+  const p2=card(760,170,CREAM,31,
+    `<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:78px;font-weight:800;color:${BLUE}">da Diabetes Tipo 2</div>`,
+    {left:'160px',top:'870px'});
+  const p3=card(680,110,WHITE,41,
+    `<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:44px;font-weight:600;color:${INK}">que você não deve ignorar</div>`,
+    {left:'200px',top:'1105px'},'sh-md');
+  const brand=card(620,96,BLUE2,51,
+    `<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#fff;font-weight:700;letter-spacing:10px;font-size:34px">UNIVERSE PHARMA</div>`,
+    {left:'230px',top:'1620px'},'sh-md');
+
+  enter(chip,150,-3,-700);
+  enter(p1,420,-2,-1000,700);
+  enter(p2,760,1.6,-900);
+  enter(p3,1000,-1.2,-800);
+  enter(brand,1240,2,1300);
+  [ [chip,-3],[p1,-2],[p2,1.6],[p3,-1.2],[brand,2] ].forEach(([e,r])=>exitFrom(e,3170,r,'up'));
+})();
+
+/* ================================================================
+   SIGN SCENES helper  (4400ms each)
+================================================================ */
+function dotsRow(active,seedBase){
+  let s='<div style="display:flex;gap:26px;align-items:center;justify-content:center;height:100%">';
+  for(let i=0;i<5;i++){
+    s+=`<div style="width:34px;height:34px;border-radius:50%;background:${i===active?BLUE2:'rgba(13,71,161,.18)'};border:4px solid ${i===active?BLUE:'rgba(13,71,161,.30)'}"></div>`;
+  }
+  return s+'</div>';
+}
+function signScene(idx,t0,titleHTML,subText,iconHTML,seed){
+  const T=t0, X=idx;
+  const head=card(760,74,WHITE,seed+1,
+    `<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:30px;font-weight:700;letter-spacing:4px;color:${BLUE2}">SINAIS DE ALERTA · DIABETES TIPO 2</div>`,
+    {left:'160px',top:'150px'},'sh-sm');
+  const dots=el(`<div style="width:400px;height:60px">${dotsRow(X,seed)}</div>`,{left:'340px',top:'268px'});
+  const num=card(150,150,BLUE2,seed+2,
+    `<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:96px;font-weight:800;color:#fff">${X+1}</div>`,
+    {left:'120px',top:'390px'});
+  const icon=card(720,720,CREAM,seed+3,
+    `<div style="display:flex;align-items:center;justify-content:center;height:100%">${iconHTML}</div>`,
+    {left:'180px',top:'560px'});
+  const title=card(880,190,BLUE,seed+4,
+    `<div style="display:flex;align-items:center;justify-content:center;height:100%;text-align:center;font-size:66px;font-weight:800;color:#fff;line-height:1.15;padding:0 30px;box-sizing:border-box">${titleHTML}</div>`,
+    {left:'100px',top:'1350px'});
+  const sub=card(820,120,WHITE,seed+5,
+    `<div style="display:flex;align-items:center;justify-content:center;height:100%;text-align:center;font-size:38px;font-weight:500;color:${INK};line-height:1.3;padding:0 34px;box-sizing:border-box">${subText}</div>`,
+    {left:'130px',top:'1590px'},'sh-md');
+  const brand=el(`<div style="width:1080px;text-align:center;font-size:28px;font-weight:700;letter-spacing:8px;color:rgba(13,71,161,.55)">UNIVERSE PHARMA</div>`,{left:'0px',top:'1790px'});
+
+  enter(head,T+60,-1,-500);
+  tw(dots,T+140,T+560,{y:-400,o:0,x:0,r:0,sc:1},{y:0,o:1,x:0,r:0,sc:1},'outCubic');
+  enter(num,T+220,-8,-700);
+  enter(icon,T+330,1.4,-1100,720);
+  enter(title,T+560,-1.5,1500);
+  enter(sub,T+700,1.2,1500);
+  tw(brand,T+700,T+1100,{o:0,y:60,x:0,r:0,sc:1},{o:1,y:0,x:0,r:0,sc:1});
+
+  const OUT=T+3980;
+  exitFrom(head,OUT,-1,'up');
+  tw(dots,OUT,OUT+400,{y:0,o:1},{y:-900,o:0},'inCubic');
+  exitFrom(num,OUT,-8,'up');
+  exitFrom(icon,OUT+20,1.4,'down');
+  exitFrom(title,OUT,-1.5,'down');
+  exitFrom(sub,OUT,1.2,'down');
+  tw(brand,OUT,OUT+380,{o:1,y:0},{o:0,y:80},'inCubic');
+}
+
+/* ---------- papercraft icons (objects only — no bodies, no devices) ---------- */
+const icoGlass=`
+<svg width="520" height="520" viewBox="0 0 520 520">
+  <g class="sh-sm">
+    <polygon points="150,120 370,120 340,430 180,430" fill="${WHITE}"/>
+    <polygon points="168,215 352,215 338,415 182,415" fill="${BLUE2}"/>
+    <polygon points="168,215 352,215 344,262 176,262" fill="#4b86d2"/>
+  </g>
+  <g class="sh-sm">
+    <path d="M415 90 C455 150 470 185 470 215 A55 55 0 1 1 360 215 C360 185 375 150 415 90 Z" fill="${BLUE}"/>
+    <circle cx="395" cy="215" r="14" fill="#ffffff" opacity=".85"/>
+  </g>
+  <g class="sh-sm">
+    <circle cx="120" cy="330" r="16" fill="${BLUE}"/>
+    <circle cx="95" cy="255" r="11" fill="${BLUE2}"/>
+  </g>
+</svg>`;
+const icoDoor=`
+<svg width="520" height="520" viewBox="0 0 520 520">
+  <g class="sh-sm"><rect x="120" y="70" width="280" height="380" rx="10" fill="${WHITE}"/></g>
+  <g class="sh-sm"><rect x="150" y="100" width="220" height="350" rx="8" fill="${BLUE2}"/></g>
+  <circle cx="340" cy="290" r="16" fill="${CREAM}" class="sh-sm"/>
+  <g class="sh-sm">
+    <rect x="196" y="150" width="128" height="86" rx="8" fill="${WHITE}"/>
+    <text x="260" y="212" text-anchor="middle" font-family="Arial,'DejaVu Sans',sans-serif" font-size="56" font-weight="800" fill="${BLUE}">WC</text>
+  </g>
+  <g class="sh-sm">
+    <path d="M60 300 h50 l-14,-18 M110 300 l-14,18" stroke="${GREEN}" stroke-width="16" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M45 380 h80 l-18,-22 M125 380 l-18,22" stroke="${GREEN}" stroke-width="16" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".7"/>
+  </g>
+</svg>`;
+const icoBattery=`
+<svg width="520" height="520" viewBox="0 0 520 520">
+  <g class="sh-sm">
+    <rect x="70" y="180" width="330" height="170" rx="22" fill="${WHITE}"/>
+    <rect x="400" y="228" width="40" height="74" rx="10" fill="${WHITE}"/>
+    <rect x="92" y="202" width="286" height="126" rx="14" fill="${CREAM}"/>
+    <rect x="104" y="214" width="64" height="102" rx="10" fill="${GRAY}"/>
+  </g>
+  <g class="sh-sm" font-family="Arial,'DejaVu Sans',sans-serif" font-weight="800" fill="${BLUE2}">
+    <text x="330" y="150" font-size="64" transform="rotate(-8 330 150)">z</text>
+    <text x="390" y="110" font-size="84" transform="rotate(6 390 110)">Z</text>
+    <text x="290" y="105" font-size="48" transform="rotate(-14 290 105)">z</text>
+  </g>
+  <g class="sh-sm">
+    <path d="M150 420 q110 60 220 0" stroke="${BLUE2}" stroke-width="14" fill="none" stroke-linecap="round" stroke-dasharray="2 26"/>
+  </g>
+</svg>`;
+const icoEye=`
+<svg width="520" height="520" viewBox="0 0 520 520">
+  <g class="sh-sm">
+    <path d="M60 260 C140 140 380 140 460 260 C380 380 140 380 60 260 Z" fill="${WHITE}"/>
+    <circle cx="260" cy="260" r="86" fill="${BLUE2}"/>
+    <circle cx="260" cy="260" r="44" fill="${BLUE}"/>
+    <circle cx="286" cy="234" r="16" fill="#ffffff"/>
+  </g>
+  <g class="sh-sm">
+    <ellipse cx="392" cy="300" rx="96" ry="52" fill="${CREAM}" opacity=".96"/>
+    <ellipse cx="452" cy="238" rx="66" ry="38" fill="${CREAM}" opacity=".9"/>
+    <ellipse cx="120" cy="320" rx="70" ry="38" fill="${CREAM}" opacity=".9"/>
+  </g>
+</svg>`;
+const icoBandage=`
+<svg width="520" height="520" viewBox="0 0 520 520">
+  <g class="sh-sm" transform="rotate(-35 260 260)">
+    <rect x="60" y="196" width="400" height="128" rx="64" fill="${CREAM}"/>
+    <rect x="196" y="212" width="128" height="96" rx="14" fill="${WHITE}"/>
+    <g fill="rgba(44,62,80,.28)">
+      <circle cx="110" cy="238" r="7"/><circle cx="146" cy="262" r="7"/><circle cx="110" cy="286" r="7"/>
+      <circle cx="410" cy="238" r="7"/><circle cx="374" cy="262" r="7"/><circle cx="410" cy="286" r="7"/>
+    </g>
+  </g>
+  <g class="sh-sm">
+    <circle cx="418" cy="120" r="74" fill="${WHITE}"/>
+    <circle cx="418" cy="120" r="60" fill="${BLUE2}"/>
+    <path d="M418 120 L418 78 M418 120 L448 138" stroke="#ffffff" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="418" cy="120" r="8" fill="#ffffff"/>
+  </g>
+</svg>`;
+
+/* scenes 1..5 */
+signScene(0,3600,'Sede excessiva','Vontade de beber água o tempo todo, mesmo sem calor ou esforço físico.',icoGlass,100);
+signScene(1,8000,'Vontade frequente de urinar','Idas ao banheiro muito acima do habitual, inclusive durante a noite.',icoDoor,200);
+signScene(2,12400,'Cansaço constante','Fadiga e falta de energia persistentes, mesmo após descansar.',icoBattery,300);
+signScene(3,16800,'Visão embaçada','Dificuldade para enxergar com nitidez, que aparece e desaparece.',icoEye,400);
+signScene(4,21200,'Cicatrização lenta','Feridas e machucados que demoram muito mais para sarar.',icoBandage,500);
+
+/* ================================================================
+   SCENE 6 — CTA / OUTRO  (25600 .. 30400)
+================================================================ */
+(function(){
+  const T=25600;
+  const q=card(880,300,WHITE,61,
+    `<div style="display:flex;align-items:center;justify-content:center;height:100%;text-align:center;font-size:82px;font-weight:800;color:${BLUE};line-height:1.2;padding:0 40px;box-sizing:border-box">Notou algum destes sinais?</div>`,
+    {left:'100px',top:'430px'});
+  const cta=card(760,190,GREEN,71,
+    `<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:72px;font-weight:800;color:#fff">Fale com seu médico</div>`,
+    {left:'160px',top:'830px'});
+  const note=card(840,150,CREAM,81,
+    `<div style="display:flex;align-items:center;justify-content:center;height:100%;text-align:center;font-size:36px;font-weight:600;color:${INK};line-height:1.35;padding:0 40px;box-sizing:border-box">Somente um profissional de saúde pode avaliar, diagnosticar e orientar o tratamento adequado.</div>`,
+    {left:'120px',top:'1120px'},'sh-md');
+  const disc=el(`<div style="width:1080px;text-align:center;font-size:30px;font-weight:600;color:rgba(44,62,80,.75)">Conteúdo educativo. Não substitui consulta médica.</div>`,{left:'0px',top:'1420px'});
+  const brand=card(640,110,BLUE,91,
+    `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;color:#fff">
+      <div style="font-weight:800;letter-spacing:10px;font-size:38px">UNIVERSE PHARMA</div>
+    </div>`,
+    {left:'220px',top:'1560px'});
+  const tag=el(`<div style="width:1080px;text-align:center;font-size:28px;font-weight:600;color:rgba(13,71,161,.7);letter-spacing:2px">Compromisso com a sua saúde</div>`,{left:'0px',top:'1710px'});
+
+  enter(q,T+80,-1.6,-900,700);
+  enter(cta,T+380,1.5,1400);
+  enter(note,T+560,-1,1400);
+  tw(disc,T+760,T+1160,{o:0,y:70,x:0,r:0,sc:1},{o:1,y:0,x:0,r:0,sc:1});
+  enter(brand,T+900,-1.2,1500);
+  tw(tag,T+1150,T+1550,{o:0,y:50,x:0,r:0,sc:1},{o:1,y:0,x:0,r:0,sc:1});
+})();
+
+window.__DURATION=30400;
+seek(0);
+</script>
+</body>
+</html>
